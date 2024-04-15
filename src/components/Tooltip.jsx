@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, useTransform, useMotionValue, useSpring } from "framer-motion";
 
+
 const items = [
   {
     id: 1,
@@ -25,22 +26,29 @@ const items = [
 ];
 
 export const Tooltip = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  // hoveredIndex is varied with the help of use state and set accordingly
+  const [hoveredIndex, setHoveredIndex] = useState(null)
+
+  //Setting up the animation
   const springConfig = { stiffness: 100, damping: 5 };
-  const x = useMotionValue(0); // going to set this value on mouse move
-  // rotate the tooltip
+  const x = useMotionValue(0) // going to set this value on mouse move
+ 
+  // rotating the tooltip
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
     springConfig
-  );
-  // translate the tooltip
+  )
+
+  // translating the tooltip
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
     springConfig
-  );
+  )
+
+  //handler function for mouse movement
   const handleMouseMove = (event) => {
     const halfWidth = event.target.offsetWidth / 2;
-    x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
+    x.set(event.nativeEvent.offsetX - halfWidth); // x value is set, which is then used in transform and rotate
   };
 
   return (

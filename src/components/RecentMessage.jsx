@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import { IoIosNotifications } from 'react-icons/io';
 
 function App() {
+  // The recent message must appear to pop up a while later
   const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
     // Set showNotification to true after a delay to trigger the animation
     const timer = setTimeout(() => {
       setShowNotification(true);
-    }, 0); // Adjust delay as needed
+    }, 0); //delay is adjusted as needed
 
-    // Clear the timer on component unmount to avoid memory leaks
+    // the timer on component is cleared to avoid memory leaks
     return () => clearTimeout(timer);
   }, []);
 

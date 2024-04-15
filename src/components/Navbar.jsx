@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link } from 'react-scroll'
-import { BiLogoReact } from "react-icons/bi";
-import { Tooltip } from './Tooltip';
+
 function Navbar() {
   return (
     <div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import Dropdown from './DropDown';
 import SearchBox from './SearchBox';
 
 function Frame() {

@@ -2,7 +2,7 @@
 import './index.css'
 import Home from './pages/Home'
 import Messages from './pages/Messages'
-import { BrowserRouter,Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
